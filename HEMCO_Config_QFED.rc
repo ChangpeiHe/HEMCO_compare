@@ -31,8 +31,8 @@ GCAPSCENARIO:                not_used
 GCAPVERTRES:                 47
 Logfile:                     *
 DiagnFile:                   HEMCO_Diagn.rc
-DiagnPrefix:                 /public/work/wanghuaxuan/4wyxz/GC_Fire/gc_GFAS_basecase/HEMCO_diagnostics
-DiagnFreq:                   00000001 000000
+DiagnPrefix:                 /public/work/wangyuexuanzi/OUTPUT/GEOS-Chem/FIRE_hr/gc_GFED_basecase/HEMCO_diagnostics
+DiagnFreq:                   00000100 000000
 Wildcard:                    *
 Separator:                   /
 Unit tolerance:              1
@@ -131,7 +131,7 @@ Warnings:                    1
     --> CMIP6_SHIP             :       false    # 1850-2100
 # ----- BIOMASS BURNING EMISSIONS ---------------------------------------------
     --> QFED2                  :       false    # 2000-2020
-    --> GFAS                   :       true     # 2003-2023
+    --> GFAS                   :       false    # 2003-2021
     --> BB4MIPS                :       false    # 1850-2100
 # ----- OFFLINE EMISSIONS -----------------------------------------------------
 # To use online emissions instead set the offline emissions to 'false' and the
@@ -202,9 +202,9 @@ Warnings:                    1
     --> Monoterp to SOAS       :       0.050
     --> Othrterp to SOAP       :       0.050
     --> Othrterp to SOAS       :       0.050
-111     GFED                   : off    NO/CO/ALK4/ACET/MEK/ALD2/PRPE/C2H2/C2H4/C3H8/CH2O/C2H6/SO2/NH3/BCPO/BCPI/OCPO/OCPI/POG1/POG2/MTPA/BENZ/TOLU/XYLE/NAP/EOH/MOH/SOAP
+111     GFED                   : on    NO/CO/ALK4/ACET/MEK/ALD2/PRPE/C2H2/C2H4/C3H8/CH2O/C2H6/SO2/NH3/BCPO/BCPI/OCPO/OCPI/POG1/POG2/MTPA/BENZ/TOLU/XYLE/NAP/EOH/MOH/SOAP
     --> GFED4                  :       true
-    --> GFED_daily             :       false
+    --> GFED_daily             :       true
     --> GFED_3hourly           :       false
     --> Scaling_CO             :       1.05
     --> Scaling_NAP            :       2.75e-4
@@ -2798,31 +2798,34 @@ Warnings:                    1
 # --- GFAS biomass burning ---
 #==============================================================================
 (((GFAS
-0 GFAS_CO    $ROOT/GFAS/v2018-09/$YYYY/GFAS_$YYYY$MM.nc cofire        2003-2023/1-12/1-31/0 C xyL=1:scal300 kg/m2/s CO   75    5 3
-0 GFAS_SOAP  $ROOT/GFAS/v2018-09/$YYYY/GFAS_$YYYY$MM.nc cofire        2003-2023/1-12/1-31/0 C xyL=1:scal300 kg/m2/s SOAP 75/281 5 3
-0 GFAS_NO    $ROOT/GFAS/v2018-09/$YYYY/GFAS_$YYYY$MM.nc noxfire       2003-2023/1-12/1-31/0 C xyL=1:scal300 kg/m2/s NO   75    5 3
-0 GFAS_BCPI  $ROOT/GFAS/v2018-09/$YYYY/GFAS_$YYYY$MM.nc bcfire        2003-2023/1-12/1-31/0 C xyL=1:scal300 kg/m2/s BCPI 70/75 5 3
-0 GFAS_BCPO  $ROOT/GFAS/v2018-09/$YYYY/GFAS_$YYYY$MM.nc bcfire        2003-2023/1-12/1-31/0 C xyL=1:scal300 kg/m2/s BCPO 71/75 5 3
-0 GFAS_OCPI  $ROOT/GFAS/v2018-09/$YYYY/GFAS_$YYYY$MM.nc ocfire        2003-2023/1-12/1-31/0 C xyL=1:scal300 kg/m2/s OCPI 72/75 5 3
-0 GFAS_OCPO  $ROOT/GFAS/v2018-09/$YYYY/GFAS_$YYYY$MM.nc ocfire        2003-2023/1-12/1-31/0 C xyL=1:scal300 kg/m2/s OCPO 73/75 5 3
-0 GFAS_CO2   $ROOT/GFAS/v2018-09/$YYYY/GFAS_$YYYY$MM.nc co2fire       2003-2023/1-12/1-31/0 C xyL=1:scal300 kg/m2/s CO2  75    5 3
-0 GFAS_CH4   $ROOT/GFAS/v2018-09/$YYYY/GFAS_$YYYY$MM.nc ch4fire       2003-2023/1-12/1-31/0 C xyL=1:scal300 kg/m2/s CH4  75    5 3
-0 GFAS_SO2   $ROOT/GFAS/v2018-09/$YYYY/GFAS_$YYYY$MM.nc so2fire       2003-2023/1-12/1-31/0 C xyL=1:scal300 kg/m2/s SO2  75    5 3
-0 GFAS_NH3   $ROOT/GFAS/v2018-09/$YYYY/GFAS_$YYYY$MM.nc nh3fire       2003-2023/1-12/1-31/0 C xyL=1:scal300 kg/m2/s NH3  75    5 3
-0 GFAS_ACET  $ROOT/GFAS/v2018-09/$YYYY/GFAS_$YYYY$MM.nc c3h6ofire     2003-2023/1-12/1-31/0 C xyL=1:scal300 kg/m2/s ACET 75    5 3
-0 GFAS_ALD2  $ROOT/GFAS/v2018-09/$YYYY/GFAS_$YYYY$MM.nc c2h4ofire     2003-2023/1-12/1-31/0 C xyL=1:scal300 kg/m2/s ALD2 75    5 3
-0 GFAS_ALK4  $ROOT/GFAS/v2018-09/$YYYY/GFAS_$YYYY$MM.nc hialkanesfire 2003-2023/1-12/1-31/0 C xyL=1:scal300 kg/m2/s ALK4 75    5 3
-0 GFAS_PRPE1 $ROOT/GFAS/v2018-09/$YYYY/GFAS_$YYYY$MM.nc hialkenesfire 2003-2023/1-12/1-31/0 C xyL=1:scal300 kg/m2/s PRPE 75    5 3
-0 GFAS_PRPE2 $ROOT/GFAS/v2018-09/$YYYY/GFAS_$YYYY$MM.nc c3h6fire      2003-2023/1-12/1-31/0 C xyL=1:scal300 kg/m2/s PRPE 75    5 3
-0 GFAS_C2H6  $ROOT/GFAS/v2018-09/$YYYY/GFAS_$YYYY$MM.nc c2h6fire      2003-2023/1-12/1-31/0 C xyL=1:scal300 kg/m2/s C2H6 75    5 3
-0 GFAS_C3H8  $ROOT/GFAS/v2018-09/$YYYY/GFAS_$YYYY$MM.nc c3h8fire      2003-2023/1-12/1-31/0 C xyL=1:scal300 kg/m2/s C3H8 75    5 3
-0 GFAS_CH2O  $ROOT/GFAS/v2018-09/$YYYY/GFAS_$YYYY$MM.nc ch2ofire      2003-2023/1-12/1-31/0 C xyL=1:scal300 kg/m2/s CH2O 75    5 3
-0 GFAS_C2H4  $ROOT/GFAS/v2018-09/$YYYY/GFAS_$YYYY$MM.nc c2h4fire      2003-2023/1-12/1-31/0 C xyL=1:scal300 kg/m2/s C2H4 75    5 3
-0 GFAS_ISOP  $ROOT/GFAS/v2018-09/$YYYY/GFAS_$YYYY$MM.nc c5h8fire      2003-2023/1-12/1-31/0 C xyL=1:scal300 kg/m2/s ISOP 75    5 3
-0 GFAS_DMS   $ROOT/GFAS/v2018-09/$YYYY/GFAS_$YYYY$MM.nc c2h6sfire     2003-2023/1-12/1-31/0 C xyL=1:scal300 kg/m2/s DMS  75    5 3
-0 GFAS_TOLU  $ROOT/GFAS/v2018-09/$YYYY/GFAS_$YYYY$MM.nc c7h8fire      2003-2023/1-12/1-31/0 C xyL=1:scal300 kg/m2/s TOLU 75    5 3
-0 GFAS_BENZ  $ROOT/GFAS/v2018-09/$YYYY/GFAS_$YYYY$MM.nc c6h6fire      2003-2023/1-12/1-31/0 C xyL=1:scal300 kg/m2/s BENZ 75    5 3
-0 GFAS_XYLE  $ROOT/GFAS/v2018-09/$YYYY/GFAS_$YYYY$MM.nc c8h10fire     2003-2023/1-12/1-31/0 C xyL=1:scal300 kg/m2/s XYLE 75    5 3
+0 GFAS_CO    $ROOT/GFAS/v2018-09/$YYYY/GFAS_$YYYY$MM.nc cofire        2003-2021/1-12/1-31/0 C xyL=1:scal300 kg/m2/s CO   75       5 3
+0 GFAS_SOAP  $ROOT/GFAS/v2018-09/$YYYY/GFAS_$YYYY$MM.nc cofire        2003-2021/1-12/1-31/0 C xyL=1:scal300 kg/m2/s SOAP 75/281   5 3
+0 GFAS_NO    $ROOT/GFAS/v2018-09/$YYYY/GFAS_$YYYY$MM.nc noxfire       2003-2021/1-12/1-31/0 C xyL=1:scal300 kg/m2/s NO   75       5 3
+0 GFAS_BCPI  $ROOT/GFAS/v2018-09/$YYYY/GFAS_$YYYY$MM.nc bcfire        2003-2021/1-12/1-31/0 C xyL=1:scal300 kg/m2/s BCPI 70/75    5 3
+0 GFAS_BCPO  $ROOT/GFAS/v2018-09/$YYYY/GFAS_$YYYY$MM.nc bcfire        2003-2021/1-12/1-31/0 C xyL=1:scal300 kg/m2/s BCPO 71/75    5 3
+0 GFAS_OCPI  $ROOT/GFAS/v2018-09/$YYYY/GFAS_$YYYY$MM.nc ocfire        2003-2021/1-12/1-31/0 C xyL=1:scal300 kg/m2/s OCPI 72/75    5 3
+0 GFAS_OCPO  $ROOT/GFAS/v2018-09/$YYYY/GFAS_$YYYY$MM.nc ocfire        2003-2021/1-12/1-31/0 C xyL=1:scal300 kg/m2/s OCPO 73/75    5 3
+0 GFAS_POG1  -                                          -             -                     - -             -       POG1 74/76/75 5 3
+0 GFAS_POG2  -                                          -             -                     - -             -       POG2 74/77/75 5 3
+0 GFAS_CO2   $ROOT/GFAS/v2018-09/$YYYY/GFAS_$YYYY$MM.nc co2fire       2003-2021/1-12/1-31/0 C xyL=1:scal300 kg/m2/s CO2  75       5 3
+0 GFAS_CH4   $ROOT/GFAS/v2018-09/$YYYY/GFAS_$YYYY$MM.nc ch4fire       2003-2021/1-12/1-31/0 C xyL=1:scal300 kg/m2/s CH4  75       5 3
+0 GFAS_SO2   $ROOT/GFAS/v2018-09/$YYYY/GFAS_$YYYY$MM.nc so2fire       2003-2021/1-12/1-31/0 C xyL=1:scal300 kg/m2/s SO2  75       5 3
+0 GFAS_pFe   -                                          -             -                     - -             -       pFe  75/66    5 3
+0 GFAS_NH3   $ROOT/GFAS/v2018-09/$YYYY/GFAS_$YYYY$MM.nc nh3fire       2003-2021/1-12/1-31/0 C xyL=1:scal300 kg/m2/s NH3  75       5 3
+0 GFAS_ACET  $ROOT/GFAS/v2018-09/$YYYY/GFAS_$YYYY$MM.nc c3h6ofire     2003-2021/1-12/1-31/0 C xyL=1:scal300 kg/m2/s ACET 75       5 3
+0 GFAS_ALD2  $ROOT/GFAS/v2018-09/$YYYY/GFAS_$YYYY$MM.nc c2h4ofire     2003-2021/1-12/1-31/0 C xyL=1:scal300 kg/m2/s ALD2 75       5 3
+0 GFAS_ALK4  $ROOT/GFAS/v2018-09/$YYYY/GFAS_$YYYY$MM.nc hialkanesfire 2003-2021/1-12/1-31/0 C xyL=1:scal300 kg/m2/s ALK4 75       5 3
+0 GFAS_PRPE1 $ROOT/GFAS/v2018-09/$YYYY/GFAS_$YYYY$MM.nc hialkenesfire 2003-2021/1-12/1-31/0 C xyL=1:scal300 kg/m2/s PRPE 75       5 3
+0 GFAS_PRPE2 $ROOT/GFAS/v2018-09/$YYYY/GFAS_$YYYY$MM.nc c3h6fire      2003-2021/1-12/1-31/0 C xyL=1:scal300 kg/m2/s PRPE 75       5 3
+0 GFAS_C2H6  $ROOT/GFAS/v2018-09/$YYYY/GFAS_$YYYY$MM.nc c2h6fire      2003-2021/1-12/1-31/0 C xyL=1:scal300 kg/m2/s C2H6 75       5 3
+0 GFAS_C3H8  $ROOT/GFAS/v2018-09/$YYYY/GFAS_$YYYY$MM.nc c3h8fire      2003-2021/1-12/1-31/0 C xyL=1:scal300 kg/m2/s C3H8 75       5 3
+0 GFAS_CH2O  $ROOT/GFAS/v2018-09/$YYYY/GFAS_$YYYY$MM.nc ch2ofire      2003-2021/1-12/1-31/0 C xyL=1:scal300 kg/m2/s CH2O 75       5 3
+0 GFAS_C2H4  $ROOT/GFAS/v2018-09/$YYYY/GFAS_$YYYY$MM.nc c2h4fire      2003-2021/1-12/1-31/0 C xyL=1:scal300 kg/m2/s C2H4 75       5 3
+0 GFAS_ISOP  $ROOT/GFAS/v2018-09/$YYYY/GFAS_$YYYY$MM.nc c5h8fire      2003-2021/1-12/1-31/0 C xyL=1:scal300 kg/m2/s ISOP 75       5 3
+0 GFAS_DMS   $ROOT/GFAS/v2018-09/$YYYY/GFAS_$YYYY$MM.nc c2h6sfire     2003-2021/1-12/1-31/0 C xyL=1:scal300 kg/m2/s DMS  75       5 3
+0 GFAS_TOLU  $ROOT/GFAS/v2018-09/$YYYY/GFAS_$YYYY$MM.nc c7h8fire      2003-2021/1-12/1-31/0 C xyL=1:scal300 kg/m2/s TOLU 75       5 3
+0 GFAS_BENZ  $ROOT/GFAS/v2018-09/$YYYY/GFAS_$YYYY$MM.nc c6h6fire      2003-2021/1-12/1-31/0 C xyL=1:scal300 kg/m2/s BENZ 75       5 3
+0 GFAS_XYLE  $ROOT/GFAS/v2018-09/$YYYY/GFAS_$YYYY$MM.nc c8h10fire     2003-2021/1-12/1-31/0 C xyL=1:scal300 kg/m2/s XYLE 75       5 3
 )))GFAS
 
 #==============================================================================
@@ -3113,23 +3116,23 @@ Warnings:                    1
 # NOTE: These are the base emissions in kgDM/m2/s.
 #==============================================================================
 (((GFED4
-111 GFED_TEMP       $ROOT/GFED4/v2020-02/$YYYY/GFED4_gen.025x025.$YYYY$MM.nc  DM_TEMP       1997-2019/1-12/01/0    C xy kgDM/m2/s * - 1 1
-111 GFED_AGRI       $ROOT/GFED4/v2020-02/$YYYY/GFED4_gen.025x025.$YYYY$MM.nc  DM_AGRI       1997-2019/1-12/01/0    C xy kgDM/m2/s * - 1 1
-111 GFED_DEFO       $ROOT/GFED4/v2020-02/$YYYY/GFED4_gen.025x025.$YYYY$MM.nc  DM_DEFO       1997-2019/1-12/01/0    C xy kgDM/m2/s * - 1 1
-111 GFED_BORF       $ROOT/GFED4/v2020-02/$YYYY/GFED4_gen.025x025.$YYYY$MM.nc  DM_BORF       1997-2019/1-12/01/0    C xy kgDM/m2/s * - 1 1
-111 GFED_PEAT       $ROOT/GFED4/v2020-02/$YYYY/GFED4_gen.025x025.$YYYY$MM.nc  DM_PEAT       1997-2019/1-12/01/0    C xy kgDM/m2/s * - 1 1
-111 GFED_SAVA       $ROOT/GFED4/v2020-02/$YYYY/GFED4_gen.025x025.$YYYY$MM.nc  DM_SAVA       1997-2019/1-12/01/0    C xy kgDM/m2/s * - 1 1
+111 GFED_TEMP       $ROOT/GFED4/v2023-03/$YYYY/GFED4_gen.025x025.$YYYY$MM.nc  DM_TEMP       2010-2023/1-12/01/0    C xy kgDM/m2/s * - 1 1
+111 GFED_AGRI       $ROOT/GFED4/v2023-03/$YYYY/GFED4_gen.025x025.$YYYY$MM.nc  DM_AGRI       2010-2023/1-12/01/0    C xy kgDM/m2/s * - 1 1
+111 GFED_DEFO       $ROOT/GFED4/v2023-03/$YYYY/GFED4_gen.025x025.$YYYY$MM.nc  DM_DEFO       2010-2023/1-12/01/0    C xy kgDM/m2/s * - 1 1
+111 GFED_BORF       $ROOT/GFED4/v2023-03/$YYYY/GFED4_gen.025x025.$YYYY$MM.nc  DM_BORF       2010-2023/1-12/01/0    C xy kgDM/m2/s * - 1 1
+111 GFED_PEAT       $ROOT/GFED4/v2023-03/$YYYY/GFED4_gen.025x025.$YYYY$MM.nc  DM_PEAT       2010-2023/1-12/01/0    C xy kgDM/m2/s * - 1 1
+111 GFED_SAVA       $ROOT/GFED4/v2023-03/$YYYY/GFED4_gen.025x025.$YYYY$MM.nc  DM_SAVA       2010-2023/1-12/01/0    C xy kgDM/m2/s * - 1 1
 
 (((GFED_subgrid_coag
 111 FINN_DAILY_NUMBER   $ROOT/FINN/v2015-02/FINN_daily_$YYYY_0.25x0.25_with_num.nc   number   2002-2016/1-12/1/0   RF xy unitless  * - 1 1
 )))GFED_subgrid_coag
 
 (((GFED_daily
-111 GFED_FRAC_DAY   $ROOT/GFED4/v2020-02/$YYYY/GFED4_dailyfrac_gen.025x025.$YYYY$MM.nc GFED_FRACDAY 2003-2019/1-12/1-31/0  R xy 1 * - 1 1
+111 GFED_FRAC_DAY   $ROOT/GFED4/v2023-03/$YYYY/GFED4_dailyfrac_gen.025x025.$YYYY$MM.nc GFED_FRACDAY 2010-2023/1-12/1-31/0  C xy 1 * - 1 1
 )))GFED_daily
 
 (((GFED_3hourly
-111 GFED_FRAC_3HOUR $ROOT/GFED4/v2020-02/$YYYY/GFED4_3hrfrac_gen.025x025.$YYYY$MM.nc   GFED_FRAC3HR 2003-2019/1-12/1/0-23  R xy 1 * - 1 1
+111 GFED_FRAC_3HOUR $ROOT/GFED4/v2023-03/$YYYY/GFED4_3hrfrac_gen.025x025.$YYYY$MM.nc   GFED_FRAC3HR 2010-2023/1-12/1/0-23  C xy 1 * - 1 1
 )))GFED_3hourly
 )))GFED4
 
@@ -4177,7 +4180,7 @@ Warnings:                    1
 # --- GFAS scale factors ---
 #==============================================================================
 (((GFAS
-300 GFAS_EMITL $ROOT/GFAS/v2018-09/$YYYY/GFAS_$YYYY$MM.nc mami 2003-2023/1-12/1-31/0 C xy m 1
+300 GFAS_EMITL $ROOT/GFAS/v2018-09/$YYYY/GFAS_$YYYY$MM.nc mami 2003-2021/1-12/1-31/0 C xy m 1
 )))GFAS
 
 #==============================================================================
